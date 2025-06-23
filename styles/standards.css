@@ -32,3 +32,25 @@ h4 {
 button:hover {
     cursor: pointer;
 }
+
+table {
+    height: 100%;
+    width: 100%;
+    padding: 16px;
+    color: rgb(100, 100, 100);
+    font-size: 18px;
+}
+
+table tr td:first-child {
+    text-align: start;
+}
+
+table tr td:last-child {
+    text-align: end;
+}
+
+table tr:last-child {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
