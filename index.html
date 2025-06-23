@@ -10,7 +10,7 @@
     <title>Bestellapp</title>
 </head>
 
-<body>
+<body onload="init()">
     <header>
         <img src="./assets/img/Logo.png" alt="">
     </header>
@@ -24,77 +24,33 @@
             </div>
             <nav>
                 <img src="./assets/icons/arrow.png" alt="">
-                <a href="#pizzas">Pizza</a>
-                <a href="#noodles">Noodles</a>
-                <a href="#salads">Salate</a>
+                <a href="#pizza">Pizza</a>
+                <a href="#noodle">Noodles</a>
+                <a href="#salad">Salate</a>
             </nav>
             <div class="menu">
-                <div id="pizzas" class="section_head bgd_1"></div>
+                <div id="pizza" class="section_head bgd_1"></div>
                 <h2>Pizza</h2>
-                <div class="presentation_plate" id="content">
-                    <div class="description">
-                        <h3>Pizza Krabben</h3>
-                        <p>mit Krabben und Pepperoni</p>
-                        <p>9,50€</p>
-                    </div>
-                    <button class="add">
-                        <img src="./assets/icons/add.png" alt="">
-                    </button>
+
+                <div id="content_pizzas">
+
                 </div>
-                <div class="presentation_plate" id="content">
-                    <div class="description">
-                        <h3>Pizza Krabben</h3>
-                        <p>mit Krabben und Pepperoni</p>
-                        <p>9,50€</p>
-                    </div>
-                    <button class="add">
-                        <img src="./assets/icons/add.png" alt="">
-                    </button>
-                </div>
-                <div id="noodles" class="section_head bgd_2"></div>
+
+            
+                <div id="noodle" class="section_head bgd_2"></div>
                 <h2>Nudeln</h2>
-                <div class="presentation_plate" id="content">
-                    <div class="description">
-                        <h3>Pizza Krabben</h3>
-                        <p>mit Krabben und Pepperoni</p>
-                        <p>9,50€</p>
-                    </div>
-                    <button class="add">
-                        <img src="./assets/icons/add.png" alt="">
-                    </button>
+                
+                <div id="content_noodles">
+
                 </div>
-                <div class="presentation_plate" id="content">
-                    <div class="description">
-                        <h3>Pizza Krabben</h3>
-                        <p>mit Krabben und Pepperoni</p>
-                        <p>9,50€</p>
-                    </div>
-                    <button class="add">
-                        <img src="./assets/icons/add.png" alt="">
-                    </button>
-                </div>
-                <div id="salads" class="section_head bgd_3"></div>
+
+                <div id="salad" class="section_head bgd_3"></div>
                 <h2>Salate</h2>
-                <div class="presentation_plate" id="content">
-                    <div class="description">
-                        <h3>Pizza Krabben</h3>
-                        <p>mit Krabben und Pepperoni</p>
-                        <p>9,50€</p>
-                    </div>
-                    <button class="add">
-                        <img src="./assets/icons/add.png" alt="">
-                    </button>
+
+                <div id="content_salads">
+
                 </div>
-                <div class="presentation_plate" id="content">
-                    <div class="description">
-                        <h3>Pizza Krabben</h3>
-                        <p>mit Krabben und Pepperoni</p>
-                        <p>9,50€</p>
-                    </div>
-                    <button class="add">
-                        <img src="./assets/icons/add.png" alt="">
-                    </button>
-                </div>
+                
             </div>
         </section>
         <aside>
@@ -102,15 +58,8 @@
                 <div class="basket_head">
                 <h2>Warenkorb</h2>
                 </div>
-                <div class="content_basket">
-                    <div class="basket_item">
-                        <h4>Pizza Diavolo (scharf)</h4>
-                        <div class="item_price"><p><button><img src="./assets/icons/minus.png" alt=""></button> 3x <button><img src="./assets/icons/plus.png" alt=""></button></p><p>25,50€</p><button><img src="./assets/icons/trashcan.png" alt=""></button></div>
-                    </div>
-                    <div class="basket_item">
-                        <h4>Pizza Diavolo (scharf)</h4>
-                        <div class="item_price"><p><button><img src="./assets/icons/minus.png" alt=""></button> 3x <button><img src="./assets/icons/plus.png" alt=""></button></p><p>25,50€</p><button><img src="./assets/icons/trashcan.png" alt=""></button></div>
-                    </div>
+                <div id="content_basket_items" class="content_basket">
+                    
                 </div>
                 <div class="calc_price">
                     <table>
@@ -120,7 +69,7 @@
                         </tr>
                         <tr>
                             <td><b>Lieferkosten</b></td>
-                            <td>irgendwas</td>
+                            <td>5,00 €</td>
                         </tr>
                         <tr>
                             <td><b>Gesamt</b></td>
@@ -135,6 +84,8 @@
     <footer></footer>
 
 
+    <script src="./scripts/templates.js"></script>
+    <script src="./scripts/dishes.js"></script>
     <script src="./script.js"></script>
 </body>
 
