@@ -170,11 +170,11 @@ aside h2 {
     padding-block: 0;
 }
 
-.item_price p:first-child{
+.item_price span:first-child{
     width: 100px;
 }
 
-p{
+span{
     display: flex;
     justify-content: space-between;
     align-items: center;
