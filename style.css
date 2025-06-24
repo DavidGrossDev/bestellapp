@@ -89,6 +89,11 @@ nav img {
     height: 26px;
 }
 
+.presentation_plate:hover{
+    cursor: pointer;
+    background-color: rgb(243, 243, 243);
+}
+
 .description {
     margin-left: 16px;
     display: flex;
