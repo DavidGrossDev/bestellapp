@@ -220,6 +220,8 @@ span {
 
 .content_basket {
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    max-height: 580px;
+    overflow-y: scroll;
 }
 
 .calc_price {
@@ -253,13 +255,13 @@ footer {
 }
 
 #content_pizzas div:active:not(.description) {
-    background-color: rgba(255, 166, 0, 0.2);
+    background-color: rgba(255, 166, 0, 0.3);
 }
 #content_noodles div:active:not(.description) {
-    background-color: rgba(255, 166, 0, 0.2);
+    background-color: rgba(255, 166, 0, 0.3);
 }
 #content_salads div:active:not(.description) {
-    background-color: rgba(255, 166, 0, 0.2);
+    background-color: rgba(255, 166, 0, 0.3);
 }
 
 @media (max-width: 760px) {
