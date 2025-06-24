@@ -25,7 +25,7 @@ function addToBasket(section, indexDishes) {
 
     if ((basketArray.indexOf(dishes[section][indexDishes])) < 0) {
         dishes[section][indexDishes].price = dishes[section][indexDishes].price / dishes[section][indexDishes].multiplicator;
-        dishes[section][indexDishes].multiplicator =1;
+        dishes[section][indexDishes].multiplicator = 1;
         basketArray.push(dishes[section][indexDishes]);
         document.getElementById('deliver').innerHTML = "";
     }
@@ -41,7 +41,7 @@ function saveBasketToLocalStorage() {
 function getBasketFromLocalStorage() {
     let loadedBasket = JSON.parse(localStorage.getItem("basket"));
 
-    if(loadedBasket != null) {
+    if (loadedBasket != null) {
         basketArray = loadedBasket;
     }
 }
@@ -86,7 +86,6 @@ function addition(indexBasket) {
     renderBasket();
 }
 
-
 function deleteItem(indexBasket) {
     basketArray[indexBasket].price = basketArray[indexBasket].price / basketArray[indexBasket].multiplicator;
     basketArray[indexBasket].multiplicator = 1;
@@ -96,29 +95,22 @@ function deleteItem(indexBasket) {
     renderBasket();
 }
 
-function renderPrice(){
+function renderPrice() {
     let pricesRef = document.getElementById('prices');
     pricesRef.innerHTML = "";
     let price = 0;
     let complete = 0;
 
     for (let indexPrices = 0; indexPrices < basketArray.length; indexPrices++) {
-        price += basketArray[indexPrices].price ;
+        price += basketArray[indexPrices].price;
 
         complete = price + 5;
 
         pricesRef.innerHTML = getPricesTemplate(price, complete);
-
-        if (gesamt = 0){
-            gesamt = 1.00;
-            price = 1.00;
-            pricesRef.innerHTML = getPricesTemplate(price, complete);
-        }
     }
 }
 
 function buyChoises() {
-    let resetPrice = 0;
     deliverContentRef = document.getElementById('deliver');
     deliverContentRef.innerHTML = getDeliverTemplate();
 
@@ -129,19 +121,21 @@ function buyChoises() {
 }
 
 function openBasketMobile() {
-    let element = document.getElementById('aside');
-    let element2 = document.getElementById('section');
-    let element3 = document.getElementById('basket_card');
-    element.style.display = "flex";
-    element.style.width = "100%";
-    element2.style.display = "none";
-    element3.style.height = "100vh";
+    let sidebar = document.getElementById('aside');
+    let main = document.getElementById('section');
+    let basketCard = document.getElementById('basket_card');
+
+    sidebar.style.display = "block";
+    sidebar.style.width = "100%";
+    main.style.display = "none";
+    basketCard.style.height = "100vh";
 }
 
 function closeBasketMobile() {
-    let element = document.getElementById('aside');
-    let element2 = document.getElementById('section');
-    element.style.display = "none";
-    element2.style.width = "100%";
-    element2.style.display = "block";
+    let sidebar = document.getElementById('aside');
+    let main = document.getElementById('section');
+
+    sidebar.style.display = "none";
+    main.style.display = "block";
+
 }
