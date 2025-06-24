@@ -35,8 +35,26 @@ section {
     background-size: cover;
     background-position: center;
     height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
+.title_img {
+  
+    position: absolute;
+    height:120px;
+    background-color: white;
+    top: 332px;
+    left: 38%;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+
+}
+
+.title_img img {
+    height: 140px;
+}
 .restaurant_card {
     height: 100px;
     text-align: left;
