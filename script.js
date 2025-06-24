@@ -123,12 +123,10 @@ function buyChoises() {
 function openBasketMobile() {
     let sidebar = document.getElementById('aside');
     let main = document.getElementById('section');
-    let basketCard = document.getElementById('basket_card');
 
     sidebar.style.display = "block";
     sidebar.style.width = "100%";
     main.style.display = "none";
-    basketCard.style.height = "100vh";
 }
 
 function closeBasketMobile() {

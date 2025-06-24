@@ -289,6 +289,10 @@ footer {
     .title_img {
         left: 60%;
     }
+
+    .basket_card {
+        height: 100vh;
+    }
 }
 
 @media (max-width: 460px) {
@@ -301,4 +305,4 @@ footer {
     .title_img img {
         height: 120px;
     }
-}
+}  
