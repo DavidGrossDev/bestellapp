@@ -27,16 +27,23 @@ function getBasketTemplate(indexBasket) {
 }
 
 function getPricesTemplate(price, gesamt) {
-    return `<tr>
-                            <td><b>Zwischensumme</b></td>
-                            <td>${price.toFixed(2)} €</td>
-                        </tr>
-                        <tr>
-                            <td><b>Lieferkosten</b></td>
-                            <td>5,00 €</td>
-                        </tr>
-                        <tr>
-                            <td><b>Gesamt</b></td>
-                            <td>${gesamt.toFixed(2)} €</td>
-                        </tr>`
+    return `<table>
+                    <tr>
+                        <td><b>Zwischensumme</b></td>
+                        <td>${price.toFixed(2)} €</td>
+                    </tr>
+                    <tr>
+                        <td><b>Lieferkosten</b></td>
+                        <td>5,00 €</td>
+                    </tr>
+                    <tr>
+                        <td><b>Gesamt</b></td>
+                        <td>${gesamt.toFixed(2)} €</td>
+                    </tr>
+            </table>
+            <button onclick="buyChoises()">Bestellung aufgeben</button>`
+}
+
+function getDeliverTemplate() {
+    return `<p>Ihre Bestellung wird bearbeitet</p>`
 }

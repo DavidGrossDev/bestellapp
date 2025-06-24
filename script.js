@@ -24,6 +24,9 @@ function addToBasket(section, indexDishes) {
 
     if ((basketArray.indexOf(dishes[section][indexDishes])) < 0) {
         basketArray.push(dishes[section][indexDishes]);
+        dishes[section][indexDishes].price = dishes[section][indexDishes].price / dishes[section][indexDishes].multiplicator;
+        dishes[section][indexDishes].multiplicator =1;
+        document.getElementById('deliver').innerHTML = "";
     }
     renderBasket();
 }
@@ -93,6 +96,33 @@ function renderPrice(){
             price = 1.00;
             pricesRef.innerHTML = getPricesTemplate(price, complete);
         }
-
     }
+}
+
+function buyChoises() {
+    let resetPrice = 0;
+    deliverContentRef = document.getElementById('deliver');
+    deliverContentRef.innerHTML = getDeliverTemplate();
+
+    let newBasket = [];
+    basketArray = newBasket;
+    renderBasket();
+}
+
+function openBasketMobile() {
+    let element = document.getElementById('aside');
+    let element2 = document.getElementById('section');
+    let element3 = document.getElementById('basket_card');
+    element.style.display = "flex";
+    element.style.width = "100%";
+    element2.style.display = "none";
+    element3.style.height = "100vh";
+}
+
+function closeBasketMobile() {
+    let element = document.getElementById('aside');
+    let element2 = document.getElementById('section');
+    element.style.display = "none";
+    element2.style.width = "100%";
+    element2.style.display = "block";
 }

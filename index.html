@@ -16,11 +16,11 @@
         <img src="./assets/img/Logo.png" alt="">
     </header>
     <main>
-        <section>
+        <section id="section">
             <div class="background_title">
             </div>
             <div class="title_img">
-                    <img src="./assets/img/restaurant_img.png" alt="">
+                <img src="./assets/img/restaurant_img.png" alt="">
             </div>
             <div class="restaurant_card">
                 <h1>Paradise Noodles</h1>
@@ -40,10 +40,10 @@
 
                 </div>
 
-            
+
                 <div id="noodle" class="section_head bgd_2"></div>
                 <h2>Nudeln</h2>
-                
+
                 <div id="content_noodles">
 
                 </div>
@@ -54,24 +54,24 @@
                 <div id="content_salads">
 
                 </div>
-                
+                <button class="basket_phone" onclick="openBasketMobile()">Warenkorb</button>
             </div>
         </section>
-        <aside>
-            <div class="basket_card">
+        <aside id="aside">
+            <div class="basket_card" id="basket_card">
                 <div class="basket_head">
-                <h2>Warenkorb</h2>
+                    <h2>Warenkorb</h2>
                 </div>
+                 
                 <div id="content_basket_items" class="content_basket">
-                    
-                </div>
-                <div class="calc_price">
-                    <table id="prices">
-                        
-                    </table>
-                </div>
-            </div>
 
+                </div>
+                <div class="calc_price" id="prices">
+                </div>
+                <div class="message" id="deliver"></div>
+                <button class="back_btn" onclick="closeBasketMobile()">Zurück</button>
+            </div>
+            
         </aside>
     </main>
     <footer></footer>
