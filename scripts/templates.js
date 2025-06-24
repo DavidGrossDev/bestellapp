@@ -45,5 +45,5 @@ function getPricesTemplate(price, gesamt) {
 }
 
 function getDeliverTemplate() {
-    return `<p>Ihre Bestellung wird bearbeitet</p>`
+    return `<p>Ihre Testbestellung wird bearbeitet</p>`
 }
