@@ -252,6 +252,16 @@ footer {
     background-color: orange;
 }
 
+#content_pizzas div:active:not(.description) {
+    background-color: rgba(255, 166, 0, 0.2);
+}
+#content_noodles div:active:not(.description) {
+    background-color: rgba(255, 166, 0, 0.2);
+}
+#content_salads div:active:not(.description) {
+    background-color: rgba(255, 166, 0, 0.2);
+}
+
 @media (max-width: 760px) {
     aside {
         display: none;
