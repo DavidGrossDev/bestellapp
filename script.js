@@ -132,10 +132,5 @@ function openBasketMobile() {
 }
 
 function closeBasketMobile() {
-    let sidebar = document.getElementById('aside');
-    let main = document.getElementById('section');
-
-    sidebar.style.display = "none";
-    main.style.display = "block";
-
+    location.reload()
 }
