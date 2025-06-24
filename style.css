@@ -252,8 +252,6 @@ footer {
     background-color: orange;
 }
 
-
-
 @media (max-width: 760px) {
     aside {
         display: none;
