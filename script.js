@@ -1,7 +1,6 @@
 let basketArray = [];
 
 function init() {
-    getBasketFromLocalStorage();
     renderAllDishes();
     renderBasket();
 }
@@ -28,22 +27,12 @@ function addToBasket(section, indexDishes) {
         dishes[section][indexDishes].multiplicator = 1;
         basketArray.push(dishes[section][indexDishes]);
         document.getElementById('deliver').innerHTML = "";
+    }else {
+        dishes[section][indexDishes].price = dishes[section][indexDishes].price / dishes[section][indexDishes].multiplicator;
+        dishes[section][indexDishes].multiplicator++
+        dishes[section][indexDishes].price = dishes[section][indexDishes].price * dishes[section][indexDishes].multiplicator;
     }
-
-    saveBasketToLocalStorage();
     renderBasket();
-}
-
-function saveBasketToLocalStorage() {
-    localStorage.setItem("basket", JSON.stringify(basketArray));
-}
-
-function getBasketFromLocalStorage() {
-    let loadedBasket = JSON.parse(localStorage.getItem("basket"));
-
-    if (loadedBasket != null) {
-        basketArray = loadedBasket;
-    }
 }
 
 function renderBasket() {
@@ -52,8 +41,7 @@ function renderBasket() {
 
     for (let indexBasket = 0; indexBasket < basketArray.length; indexBasket++) {
         contentBasketRef.innerHTML += getBasketTemplate(indexBasket);
-    }
-
+    } 
     renderPrice();
 }
 
@@ -61,14 +49,13 @@ function subtract(indexBasket) {
     let priceSub = basketArray[indexBasket].price;
     let multiply = basketArray[indexBasket].multiplicator;
     priceSub = priceSub / multiply;
-
     multiply--;
-
     if (multiply > 0) {
         basketArray[indexBasket].price = priceSub * multiply;
         basketArray[indexBasket].multiplicator = multiply;
+    }else {
+        deleteItem(indexBasket);
     }
-    saveBasketToLocalStorage();
     renderBasket();
 }
 
@@ -76,13 +63,10 @@ function addition(indexBasket) {
     let priceAdd = basketArray[indexBasket].price;
     let multiply = basketArray[indexBasket].multiplicator;
     priceAdd = priceAdd / multiply;
-
     multiply++;
-
     basketArray[indexBasket].price = priceAdd * multiply;
     basketArray[indexBasket].multiplicator = multiply;
 
-    saveBasketToLocalStorage();
     renderBasket();
 }
 
@@ -90,8 +74,6 @@ function deleteItem(indexBasket) {
     basketArray[indexBasket].price = basketArray[indexBasket].price / basketArray[indexBasket].multiplicator;
     basketArray[indexBasket].multiplicator = 1;
     basketArray.splice(indexBasket, 1);
-
-    saveBasketToLocalStorage();
     renderBasket();
 }
 
@@ -103,11 +85,10 @@ function renderPrice() {
 
     for (let indexPrices = 0; indexPrices < basketArray.length; indexPrices++) {
         price += basketArray[indexPrices].price;
-
         complete = price + 5;
-
         pricesRef.innerHTML = getPricesTemplate(price, complete);
     }
+    document.getElementById('phone_basket').innerHTML = `Warenkorb: ${complete.toFixed(2)} €`;
 }
 
 function buyChoises() {
@@ -116,7 +97,6 @@ function buyChoises() {
 
     let newBasket = [];
     basketArray = newBasket;
-    saveBasketToLocalStorage();
     renderBasket();
 }
 
@@ -127,8 +107,15 @@ function openBasketMobile() {
     sidebar.style.display = "block";
     sidebar.style.width = "100%";
     main.style.display = "none";
+    document.body.style.height = "100vh"; 
 }
 
 function closeBasketMobile() {
-    location.reload()
+    let sidebar = document.getElementById('aside');
+    let main = document.getElementById('section');
+    
+    sidebar.style.display = "";
+    sidebar.style.width = "";
+    main.style.display = "";
+    document.body.style.height = "";
 }

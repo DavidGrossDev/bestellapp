@@ -107,7 +107,6 @@ nav img {
 }
 
 .presentation_plate:hover {
-    cursor: pointer;
     background-color: rgb(243, 243, 243);
 }
 
@@ -254,16 +253,6 @@ footer {
     background-color: orange;
 }
 
-#content_pizzas div:active:not(.description) {
-    background-color: rgba(255, 166, 0, 0.3);
-}
-#content_noodles div:active:not(.description) {
-    background-color: rgba(255, 166, 0, 0.3);
-}
-#content_salads div:active:not(.description) {
-    background-color: rgba(255, 166, 0, 0.3);
-}
-
 @media (max-width: 760px) {
     aside {
         display: none;
@@ -280,6 +269,8 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
+        position: sticky;
+        bottom: 16px;
     }
 
     section {
